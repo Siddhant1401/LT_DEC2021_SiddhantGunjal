@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+/* #form{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+} */
+
+#form{
+    display: flex;
+    /* flex-direction: column; */
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#form::before{
+    content: "";
+    background: url('../images/bg6.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.container{
+    max-width: 700px;
+    max-height: 600px;
+    overflow-y: scroll;
+    width: 100%;
+    background: transparent;
+    padding: 25px 30px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+
+.container .title{
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    background: #f44336;
+    height: 3px;
+    width: 30px;
+    left: 0;
+    bottom: 0;
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input, select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.input-box .details{
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input:focus,
+/* .user-details .input-box input:valid, */
+select:focus{
+    border-color: #9b59b6;
+}
+
+.user-details .input-box.success input{
+    border-color: green;
+}
+.user-details .input-box.error input{
+    border-color: red;
+}
+.user-details .input-box.error small{
+    visibility: visible;
+}
+
+.input-box.success textarea{
+    border-color: green;
+}
+.input-box.error textarea{
+    border-color: red;
+}
+.input-box.success select{
+    border-color: green;
+}
+.input-box.error select{
+    border-color: red;
+}
+.input-box.error small{
+    visibility: visible;
+}
+
+.specialization-details.success small{
+    visibility: hidden;
+} 
+.specialization-details.error small{
+    visibility: visible;
+} 
+.gender-details.success small{
+    visibility: hidden;
+} 
+.gender-details.error small{
+    visibility: visible;
+} 
+
+/* textarea */
+textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.input-box textarea:focus{
+    border-color: #9b59b6;
+
+}
+
+
+/* gender radio button */
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin-top: 14px;
+    justify-content: space-between;
+}
+
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: #f44336;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+/* specialization checkbox */
+form .specialization-details{
+    margin-top: 15px;
+}
+form .specialization-details .specialization-title{
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+form .specialization-details .category{
+    display: flex;
+    width: 70%;
+    margin-top: 14px;
+    justify-content: space-between;
+}
+
+.specialization-details .category label{
+    display: flex;
+    align-items: center;
+}
+
+.specialization-details .category .check{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    margin-right: 10px;
+    border: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#check-1:checked ~ .category label .one,
+#check-2:checked ~ .category label .two,
+#check-3:checked ~ .category label .three{
+    border-color: #d9d9d9;
+    background: #f44336;
+}
+
+form input[type="checkbox"]{
+    display: none;
+}
+
+/* error message */
+small{
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    color: red;
+    visibility: hidden;
+}
+
+/* submit button */
+form .button{
+    height: 45px;
+    width: 45px 0;
+    margin-top: 20px;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: transparent;
+    background-size: 150%;
+    transition: 0.5s;
+}
+
+form .button input:hover{
+    /* background: linear-gradient(135deg, #1a8fdd, #962bc0); */
+    cursor: pointer;
+    background-position: right;
+    background: #f44336;
+    transition: 1s;
+}
+
+.login-user{
+    /* justify-content: center;
+    align-items: center; */
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 17px;
+    color: #fff;
+}
+
+.login-user a{
+    text-decoration: none;
+    color: #2691d9;
+}
+
+.login-user a:hover{
+    text-decoration: underline;
+}
+
+/* responsiveness */
+@media (max-width: 584px) {
+    .container{
+        width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category{
+        width: 100%;
+    }
+
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
